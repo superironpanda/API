@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Newtonsoft.Json;
 namespace DropShipAPI
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -23,9 +23,10 @@ namespace DropShipAPI
             request.AddHeader("Cache-Control", "no-cache");
             request.AddHeader("Content-Type", "application/json");
             //request.AddParameter("undefined", "{\r\n\t\"products\":[{\r\n\t\t\"packages\":[{\r\n\t\t\t\"sku\":\"B0736J539T\",\r\n\t\t\t\"upc\":\"B0736J539T\",\r\n\t\t\t\"qty\":3\r\n\t\t}]\r\n\t}]\r\n}\r\n", ParameterType.RequestBody);
-            request.AddParameter("undefined","{\r\n\t\"products\":[{\r\n\t\t\"packages\":[{\r\n\t\t\t\"sku\":\""+SKUTxt+"\",\r\n\t\t\t\"upc\":\""+UPCTxt+"\",\r\n\t\t\t\"qty\":3\r\n\t\t}]\r\n\t}]\r\n}\r\n", ParameterType.RequestBody);
+            request.AddParameter("undefined", "{\r\n\t\"products\":[{\r\n\t\t\"packages\":[{\r\n\t\t\t\"sku\":\"" + SKUTxt.Text + "\",\r\n\t\t\t\"upc\":\"" + UPCTxt.Text + "\",\r\n\t\t\t\"qty\":3\r\n\t\t}]\r\n\t}]\r\n}\r\n", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             Label1.Text = response.Content;
         }
+       
     }
 }
