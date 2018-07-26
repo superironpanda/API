@@ -9,6 +9,17 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <br />
+            <asp:Label ID="LabelSKU" runat="server" text="SKU" />
+            <br />
+            <asp:TextBox ID="SKUTxt" runat="server" />
+            <br />
+            <br />
+            <asp:Label ID="LabelUPC" runat="server" text="UPC" />
+            <br />
+            <asp:TextBox ID="UPCTxt" runat="server" />
+            <br />
+            <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>

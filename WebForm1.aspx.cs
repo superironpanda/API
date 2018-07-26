@@ -22,7 +22,8 @@ namespace DropShipAPI
             request.AddHeader("Postman-Token", "851dbab3-544f-4fb1-83e2-4d771ff524cb");
             request.AddHeader("Cache-Control", "no-cache");
             request.AddHeader("Content-Type", "application/json");
-            request.AddParameter("undefined", "{\r\n\t\"products\":[{\r\n\t\t\"packages\":[{\r\n\t\t\t\"sku\":\"B0736J539T\",\r\n\t\t\t\"upc\":\"B0736J539T\",\r\n\t\t\t\"qty\":3\r\n\t\t}]\r\n\t}]\r\n}\r\n", ParameterType.RequestBody);
+            //request.AddParameter("undefined", "{\r\n\t\"products\":[{\r\n\t\t\"packages\":[{\r\n\t\t\t\"sku\":\"B0736J539T\",\r\n\t\t\t\"upc\":\"B0736J539T\",\r\n\t\t\t\"qty\":3\r\n\t\t}]\r\n\t}]\r\n}\r\n", ParameterType.RequestBody);
+            request.AddParameter("undefined","{\r\n\t\"products\":[{\r\n\t\t\"packages\":[{\r\n\t\t\t\"sku\":\""+SKUTxt+"\",\r\n\t\t\t\"upc\":\""+UPCTxt+"\",\r\n\t\t\t\"qty\":3\r\n\t\t}]\r\n\t}]\r\n}\r\n", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             Label1.Text = response.Content;
         }
